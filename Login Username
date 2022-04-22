@@ -1,0 +1,65 @@
+namespace arrayAssignment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] Username = new char[16]  ; //create array of 16 elements
+
+            Console.WriteLine("Enter a value for the 1st character in the username"); //Create 1st Character in Passcode
+            Username[0] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 2nd character in the username"); //Create 2nd Character in Passcode
+            Username[1] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 3rd character in the username"); //Create 3rd Character in Passcode
+            Username[2] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 4th character in the username"); //Create 4th Character in Passcode
+            Username[3] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 5th character in the username"); //Create 5th Character in Passcode
+            Username[4] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 6th character in the username"); //Create 6th Character in Passcode
+            Username[5] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 7th character in the username"); //Create 7th Character in Passcode
+            Username[6] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 8th character in the username"); //Create 8th Character in Passcode
+            Username[7] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 9th character in the username"); //Create 8th Character in Passcode
+            Username[8] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 10th character in the username"); //Create 8th Character in Passcode
+            Username[9] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 11th character in the username"); //Create 8th Character in Passcode
+            Username[10] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 12th character in the username"); //Create 8th Character in Passcode
+            Username[11] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 13th character in the username"); //Create 8th Character in Passcode
+            Username[12] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 14th character in the username"); //Create 8th Character in Passcode
+            Username[13] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 15th character in the username"); //Create 8th Character in Passcode
+            Username[14] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 16th character in the username"); //Create 8th Character in Passcode
+            Username[15] = Convert.ToChar(Console.ReadLine());
+
+            for (int i = 0; i < Username.Length; i++) //for loop 
+            {
+                Console.Write(Username[i]); //displaying all of the elements
+            }
+
+            Console.WriteLine(" is your username"); //display message
+            Console.WriteLine("Press enter to continue and enter your password");
+
+            Console.ReadLine();
