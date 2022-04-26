@@ -4,6 +4,13 @@ namespace arrayAssignment
     {
         static void Main(string[] args)
         {
+        
+            string usr = ".";
+            string str = ".";
+            int GuessCount = 0;
+            Console.WriteLine("Would you like to 'Set' login credentials or 'login' to the website?");
+            string order = Console.ReadLine();
+            
             char[] Username = new char[16]  ; //create array of 16 elements
 
             Console.WriteLine("Enter a value for the 1st character in the username"); //Create 1st Character in Passcode
