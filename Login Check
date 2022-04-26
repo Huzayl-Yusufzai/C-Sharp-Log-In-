@@ -1,0 +1,26 @@
+if (order == "login")
+            {
+                for (int i = 0; i < GuessCount; GuessCount++)
+                {
+
+                    Console.WriteLine("Please type in your user name");
+                    string GuessUserName = Console.ReadLine();
+
+                    Console.WriteLine("Please type in your Password");
+                    string GuessPassword = Console.ReadLine();
+
+                    if ((GuessUserName != usr) || (GuessPassword != str))
+                    {
+                        Console.WriteLine("There was a mistake with your Username/Password. Try again, you have 2 more tries");
+                        ++GuessCount;
+                    }
+
+                    else
+
+                    {
+                        break; 
+                    }
+                }
+
+                // Place the actual code for the website here 
+            }
