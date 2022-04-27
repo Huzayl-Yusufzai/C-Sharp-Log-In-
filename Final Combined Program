@@ -1,0 +1,237 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace arrayAssignment
+{
+    class Program
+    {
+        static int tableWidth = 175;
+
+        static void Main(string[] args)
+        {
+            char[] Username = new char[16]  ; //create array of 16 elements
+
+            Console.WriteLine("Enter a value for the 1st character in the username"); //Create 1st Character in Passcode
+            Username[0] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 2nd character in the username"); //Create 2nd Character in Passcode
+            Username[1] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 3rd character in the username"); //Create 3rd Character in Passcode
+            Username[2] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 4th character in the username"); //Create 4th Character in Passcode
+            Username[3] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 5th character in the username"); //Create 5th Character in Passcode
+            Username[4] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 6th character in the username"); //Create 6th Character in Passcode
+            Username[5] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 7th character in the username"); //Create 7th Character in Passcode
+            Username[6] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 8th character in the username"); //Create 8th Character in Passcode
+            Username[7] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 9th character in the username"); //Create 8th Character in Passcode
+            Username[8] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 10th character in the username"); //Create 8th Character in Passcode
+            Username[9] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 11th character in the username"); //Create 8th Character in Passcode
+            Username[10] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 12th character in the username"); //Create 8th Character in Passcode
+            Username[11] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 13th character in the username"); //Create 8th Character in Passcode
+            Username[12] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 14th character in the username"); //Create 8th Character in Passcode
+            Username[13] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 15th character in the username"); //Create 8th Character in Passcode
+            Username[14] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 16th character in the username"); //Create 8th Character in Passcode
+            Username[15] = Convert.ToChar(Console.ReadLine());
+
+            for (int i = 0; i < Username.Length; i++) //for loop 
+            {
+                Console.Write(Username[i]); //displaying all of the elements
+            }
+
+            Console.WriteLine(" is your username"); //display message
+            Console.WriteLine("Press enter to continue and enter your password");
+
+            string usr = new string(Username);
+
+            Console.ReadLine();
+
+            //----------------------------------------------------------------------------------------------------------------
+
+            Console.WriteLine("   ");
+            Console.WriteLine("   ");
+
+            char[] Password = { '1', '2', '3', '4', '5', '6', '7', '8' }; //create array of 10 elements
+
+            Console.WriteLine("Enter a value for the 1st character in the passcode"); //Create 1st Character in Passcode
+            Password[0] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 2nd character in passcode"); //Create 2nd Character in Passcode
+            Password[1] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 3rd character in Passcode"); //Create 3rd Character in Passcode
+            Password[2] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 4th character in Passcode"); //Create 4th Character in Passcode
+            Password[3] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 5th character in Passcode"); //Create 5th Character in Passcode
+            Password[4] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 6th character in Passcode"); //Create 6th Character in Passcode
+            Password[5] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 7th character in Passcode"); //Create 7th Character in Passcode
+            Password[6] = Convert.ToChar(Console.ReadLine());
+
+            Console.WriteLine("Enter a value for the 8th character in Passcode"); //Create 8th Character in Passcode
+            Password[7] = Convert.ToChar(Console.ReadLine());
+
+
+            char[] Password2 = { Convert.ToChar(Password[0]), Convert.ToChar(Password[1]), Convert.ToChar(Password[2]), Convert.ToChar(Password[3]), 
+                               Convert.ToChar(Password[4]), Convert.ToChar(Password[5]), Convert.ToChar(Password[6]), Convert.ToChar(Password[7])};
+
+            for (int i = 0; i < Password.Length; i++)
+            {
+                Password2[i] = '*';
+            }
+
+            for (int i = 0; i < Password.Length; i++) //for loop 
+            {
+                Console.Write(Password[i]); //displaying all of the elements
+            }
+
+            Console.Write(" is your password"); //display message
+
+            Console.WriteLine("   ");
+
+            string str = new string(Password); //creates new string as a condensed version of array [Password]
+
+            Console.WriteLine("Press enter to go to login page");
+
+            Console.ReadLine();
+
+            //----------------------------------------------------------------------------------------------------------------------------------------------
+            
+            int GuessCount = 0;
+
+            Console.WriteLine("Would you like to 'Set' login credentials or 'login' to the website?");
+
+            string order = Console.ReadLine();
+
+            if (order == "login")
+            {
+                for (int i = 0; i < GuessCount; GuessCount++)
+                {
+
+                    Console.WriteLine("Please type in your user name");
+                    string GuessUserName = Console.ReadLine();
+
+                    Console.WriteLine("Please type in your Password");
+                    string GuessPassword = Console.ReadLine();
+
+                    if ((GuessUserName != usr) || (GuessPassword != str))
+                    {
+                        Console.WriteLine("There was a mistake with your Username/Password. Try again, you have 2 more tries");
+                        ++GuessCount;
+                    }
+
+                    else
+
+                    {
+                        break; 
+                    }
+                }
+            }
+
+            //----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+            Console.Clear();
+            PrintLine();
+            PrintRow("Morbius", "Popeye", "Sonic 2", "The Batman");
+            PrintLine();
+            PrintRow("12:45, 3:25, 6:30, 9:15", "3:00 p.m, 5:00 p.m, 7:00 p.m, 9:00 p.m", "1:00 p.m, 3:45 p.m, 6:30 p.m, 9:20 p.m", "4:30 p.m, 6:00 p.m, 8:30 p.m, 9:40 p.m");
+            PrintRow("$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+");
+            PrintLine();
+            PrintRow("Enter 1 to get seats", "Enter 2 to get seats", "Enter 3 to get seats", "Enter 4 to get seats");
+
+            int seat = Convert.ToInt32(Console.ReadLine());
+
+            if (seat == 1)
+            {
+                Console.WriteLine("Morbius seats");
+            }
+            else if (seat == 2)
+            {
+                Console.WriteLine("Popeye seats");
+            }
+            else if (seat == 3)
+            {
+                Console.WriteLine("Sonic 2 seats");
+            }
+            else if (seat == 4)
+            {
+                Console.WriteLine("The Batman seats");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
+
+
+
+            Console.ReadLine();
+            }
+
+            static void PrintLine()
+            {
+                Console.WriteLine(new string('-', tableWidth));
+            }
+
+            static void PrintRow(params string[] columns)
+            {
+            int width = (tableWidth - columns.Length) / columns.Length;
+            string row = "|";
+
+            foreach (string column in columns)
+            {
+                row += AlignCentre(column, width) + "|";
+            }
+
+            Console.WriteLine(row);
+            }
+
+            static string AlignCentre(string text, int width)
+            {
+                text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
+
+                if (string.IsNullOrEmpty(text))
+                {
+                    return new string(' ', width);
+                }
+                else
+                {
+                    return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
+                }
+
+        }
+    }
+}
