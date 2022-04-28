@@ -1,3 +1,16 @@
+Console.WriteLine("Would you like to log in now? Yes or No.)");
+            order = Console.ReadLine();
+
+            if (order == "Yes")
+            {
+                order = "login";
+            }
+
+            else
+            {
+                System.Environment.Exit(0);
+            }
+
 if (order == "login")
             {
                 for (int i = 0; i < GuessCount; GuessCount++)
