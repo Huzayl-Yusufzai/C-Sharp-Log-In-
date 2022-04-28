@@ -13,7 +13,7 @@ Console.WriteLine("Would you like to log in now? Yes or No.)");
 
 if (order == "login")
             {
-                for (int i = 0; i < GuessCount; GuessCount++)
+                for (int GuessCount = 0; GuessCount < 3; GuessCount++)
                 {
 
                     Console.WriteLine("Please type in your user name");
