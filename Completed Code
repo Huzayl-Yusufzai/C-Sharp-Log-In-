@@ -36,23 +36,16 @@ namespace arrayAssignment
             string Password = Console.ReadLine();
             char[] PasswordArray = Password.ToCharArray(); //create array of however many characters in password
 
-
-            for (int i = 0; i < Password.Length; i++) //for loop 
-            {
-                Console.Write(Password[i]); //displaying all of the elements
-            }
-
-
             char[] Password2 = {Convert.ToChar(Password[0]), Convert.ToChar(Password[1]), Convert.ToChar(Password[2]), Convert.ToChar(Password[3]), 
-                              Convert.ToChar(Password[4]), Convert.ToChar(Password[5]), Convert.ToChar(Password[6]), Convert.ToChar(Password[7])};
+                              Convert.ToChar(Password[4]), Convert.ToChar(Password[5]), Convert.ToChar(Password[6]), Convert.ToChar(Password[7])}; //array declaring
+                                                                                                                                       //the values for censored array
 
             
-            for (int i = 0; i < Password.Length; i++)
+            for (int i = 0; i < Password.Length; i++) //For loop for censored password
             {
                 Password2[i] = '*';
             }
 
-            //Console.Write(Password2); Prints censored password
 
             for (int i = 0; i < Password2.Length; i++) //for loop 
             {
@@ -69,37 +62,45 @@ namespace arrayAssignment
 
             //----------------------------------------------------------------------------------------------------------------------------------------------
             
-            int GuessCount = 0;
+            int GuessCount = 4;
 
-            Console.WriteLine("Would you like to 'Set' login credentials or 'login' to the website?");
+            Console.WriteLine("Type in 'login' to sign into your account");
 
             string order = Console.ReadLine();
-            /*
+
             if (order == "login")
             {
-                for (int i = 0; i < GuessCount; GuessCount++)
+                for (int i = 0; i < GuessCount; i++)
                 {
 
-                    Console.WriteLine("Please type in your user name");
+                    Console.WriteLine("Please type in your username");
                     string GuessUserName = Console.ReadLine();
 
                     Console.WriteLine("Please type in your Password");
                     string GuessPassword = Console.ReadLine();
 
-                    if ((GuessUserName != usr) || (GuessPassword != str))
+                    if ((GuessUserName != Username) || (GuessPassword != Password))
                     {
-                        Console.WriteLine("There was a mistake with your Username/Password. Try again, you have 2 more tries");
-                        ++GuessCount;
+                        Console.WriteLine("There was a mistake with your Username/Password. Try again, you have " + (GuessCount - (i + 1)) + " more tries");
+                    }
+                    else if (i == GuessCount - 1)
+                    {
+                        Console.WriteLine("You will now be kicked out");
+                        Environment.Exit(0);
                     }
 
-                    else
-
+                    if (Username == GuessUserName && Password == GuessPassword)
                     {
-                        break; 
+                        break;
                     }
                 }
-            }*/
+            }
 
+            else
+            {
+                Console.WriteLine("Invalid Input");
+            }
+            
             //----------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -135,10 +136,18 @@ namespace arrayAssignment
                 Console.WriteLine("Invalid input");
             }
 
+            Console.WriteLine("Enter column number (1-14)");
+            int column = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Row (A-F)");
+            char row = Convert.ToChar(Console.ReadLine());
 
+            Console.WriteLine("column " + column + " " + "row " + row + " is your seat");
+            Console.WriteLine("Thank you for buying a ticket at Movie Knight! We hope you enjoy your theatre experience!");
 
             Console.ReadLine();
             }
+
+            //==========================================================================================================================================
 
             static void PrintLine()
             {
