@@ -14,7 +14,7 @@ namespace arrayAssignment
             Console.WriteLine("Enter Username");
             string Username = Console.ReadLine();
             char[] UsernameArray = Username.ToCharArray(); //create array of 16 elements
-            
+
 
             for (int i = 0; i < Username.Length; i++) //for loop 
             {
@@ -38,9 +38,9 @@ namespace arrayAssignment
 
             char[] Password2 = {Convert.ToChar(Password[0]), Convert.ToChar(Password[1]), Convert.ToChar(Password[2]), Convert.ToChar(Password[3]), 
                               Convert.ToChar(Password[4]), Convert.ToChar(Password[5]), Convert.ToChar(Password[6]), Convert.ToChar(Password[7])}; //array declaring
-                                                                                                                                       //the values for censored array
+            //the values for censored array
 
-            
+
             for (int i = 0; i < Password.Length; i++) //For loop for censored password
             {
                 Password2[i] = '*';
@@ -61,8 +61,9 @@ namespace arrayAssignment
             Console.ReadLine();
 
             //----------------------------------------------------------------------------------------------------------------------------------------------
-            
+
             int GuessCount = 4;
+            int fail = 0;
 
             Console.WriteLine("Type in 'login' to sign into your account");
 
@@ -82,16 +83,55 @@ namespace arrayAssignment
                     if ((GuessUserName != Username) || (GuessPassword != Password))
                     {
                         Console.WriteLine("There was a mistake with your Username/Password. Try again, you have " + (GuessCount - (i + 1)) + " more tries");
+                        fail = GuessCount - (i + 1);
                     }
-                    else if (i == GuessCount - 1)
+
+                    if (fail == 0)
                     {
-                        Console.WriteLine("You will now be kicked out");
-                        Environment.Exit(0);
+                        Console.WriteLine("You will now be locked out of your account");
                     }
 
                     if (Username == GuessUserName && Password == GuessPassword)
                     {
-                        break;
+                        Console.Clear();
+                        PrintLine();
+                        PrintRow("Morbius", "Popeye", "Sonic 2", "The Batman");
+                        PrintLine();
+                        PrintRow("12:45, 3:25, 6:30, 9:15", "3:00 p.m, 5:00 p.m, 7:00 p.m, 9:00 p.m", "1:00 p.m, 3:45 p.m, 6:30 p.m, 9:20 p.m", "4:30 p.m, 6:00 p.m, 8:30 p.m, 9:40 p.m");
+                        PrintRow("$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+");
+                        PrintLine();
+                        PrintRow("Enter 1 to get seats", "Enter 2 to get seats", "Enter 3 to get seats", "Enter 4 to get seats");
+
+                        int seat = Convert.ToInt32(Console.ReadLine());
+
+                        if (seat == 1)
+                        {
+                            Console.WriteLine("Morbius seats");
+                        }
+                        else if (seat == 2)
+                        {
+                            Console.WriteLine("Popeye seats");
+                        }
+                        else if (seat == 3)
+                        {
+                            Console.WriteLine("Sonic 2 seats");
+                        }
+                        else if (seat == 4)
+                        {
+                            Console.WriteLine("The Batman seats");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid input");
+                        }
+
+                        Console.WriteLine("Enter column number (1-14)");
+                        int column = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Enter Row (A-F)");
+                        char row = Convert.ToChar(Console.ReadLine());
+
+                        Console.WriteLine("column " + column + " " + "row " + row + " is your seat");
+                        Console.WriteLine("Thank you for buying a ticket at Movie Knight! We hope you enjoy your theatre experience!");
                     }
                 }
             }
@@ -100,62 +140,19 @@ namespace arrayAssignment
             {
                 Console.WriteLine("Invalid Input");
             }
-            
-            //----------------------------------------------------------------------------------------------------------------------------------------------
-
-
-            Console.Clear();
-            PrintLine();
-            PrintRow("Morbius", "Popeye", "Sonic 2", "The Batman");
-            PrintLine();
-            PrintRow("12:45, 3:25, 6:30, 9:15", "3:00 p.m, 5:00 p.m, 7:00 p.m, 9:00 p.m", "1:00 p.m, 3:45 p.m, 6:30 p.m, 9:20 p.m", "4:30 p.m, 6:00 p.m, 8:30 p.m, 9:40 p.m");
-            PrintRow("$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+");
-            PrintLine();
-            PrintRow("Enter 1 to get seats", "Enter 2 to get seats", "Enter 3 to get seats", "Enter 4 to get seats");
-
-            int seat = Convert.ToInt32(Console.ReadLine());
-
-            if (seat == 1)
-            {
-                Console.WriteLine("Morbius seats");
-            }
-            else if (seat == 2)
-            {
-                Console.WriteLine("Popeye seats");
-            }
-            else if (seat == 3)
-            {
-                Console.WriteLine("Sonic 2 seats");
-            }
-            else if (seat == 4)
-            {
-                Console.WriteLine("The Batman seats");
-            }
-            else
-            {
-                Console.WriteLine("Invalid input");
-            }
-
-            Console.WriteLine("Enter column number (1-14)");
-            int column = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Row (A-F)");
-            char row = Convert.ToChar(Console.ReadLine());
-
-            Console.WriteLine("column " + column + " " + "row " + row + " is your seat");
-            Console.WriteLine("Thank you for buying a ticket at Movie Knight! We hope you enjoy your theatre experience!");
 
             Console.ReadLine();
-            }
+        }
 
-            //==========================================================================================================================================
+        //==========================================================================================================================================
 
-            static void PrintLine()
-            {
-                Console.WriteLine(new string('-', tableWidth));
-            }
+        static void PrintLine()
+        {
+            Console.WriteLine(new string('-', tableWidth));
+        }
 
-            static void PrintRow(params string[] columns)
-            {
+        static void PrintRow(params string[] columns)
+        {
             int width = (tableWidth - columns.Length) / columns.Length;
             string row = "|";
 
@@ -165,20 +162,20 @@ namespace arrayAssignment
             }
 
             Console.WriteLine(row);
-            }
+        }
 
-            static string AlignCentre(string text, int width)
+        static string AlignCentre(string text, int width)
+        {
+            text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
+
+            if (string.IsNullOrEmpty(text))
             {
-                text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
-
-                if (string.IsNullOrEmpty(text))
-                {
-                    return new string(' ', width);
-                }
-                else
-                {
-                    return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
-                }
+                return new string(' ', width);
+            }
+            else
+            {
+                return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
+            }
 
         }
     }
