@@ -7,12 +7,12 @@ namespace arrayAssignment
 {
     class Program
     {
-        static int tableWidth = 175;
+        static int tableWidth = 175; //integer declaring width of table (called upon later in the program)
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Username");
-            string Username = Console.ReadLine();
+            Console.WriteLine("Enter Username"); //prompts user to enter username
+            string Username = Console.ReadLine(); //allows user to enter username
             char[] UsernameArray = Username.ToCharArray(); //create array of 16 elements
 
 
@@ -22,123 +22,108 @@ namespace arrayAssignment
             }
 
             Console.WriteLine(" is your username"); //display message
-            Console.WriteLine("Press enter to continue and enter your password");
+            Console.WriteLine("Press enter to continue and enter your password"); //display message
 
 
             Console.ReadLine();
 
             //----------------------------------------------------------------------------------------------------------------
 
-            Console.WriteLine("   ");
-            Console.WriteLine("   ");
+            Console.WriteLine("   "); //space
+            Console.WriteLine("   "); //space
 
             Console.WriteLine("Enter Password of exactly 8 characters");
             string Password = Console.ReadLine();
             char[] PasswordArray = Password.ToCharArray(); //create array of however many characters in password
-
-            char[] Password2 = {Convert.ToChar(Password[0]), Convert.ToChar(Password[1]), Convert.ToChar(Password[2]), Convert.ToChar(Password[3]), 
-                              Convert.ToChar(Password[4]), Convert.ToChar(Password[5]), Convert.ToChar(Password[6]), Convert.ToChar(Password[7])}; //array declaring
-            //the values for censored array
-
-
-            for (int i = 0; i < Password.Length; i++) //For loop for censored password
+            
+            for (int i = 0; i < Password.Length; i++) //for loop 
             {
-                Password2[i] = '*';
-            }
-
-
-            for (int i = 0; i < Password2.Length; i++) //for loop 
-            {
-                Console.Write(Password[i]); //displaying all of the elements
+                Console.Write(Password[i]); //displaying all of the elements of password text
             }
 
             Console.WriteLine(" is your password"); //display message
 
-            Console.WriteLine("   ");
+            Console.WriteLine("   "); //space
 
-            Console.WriteLine("Press enter to go to login page");
+            Console.WriteLine("Press enter to go to login page"); //allows user to go into login page by pressing enter (Console.ReadLine() function)
 
             Console.ReadLine();
 
             //----------------------------------------------------------------------------------------------------------------------------------------------
 
-            int GuessCount = 4;
+            int GuessCount = 4; //declares variable GuessCount
             int fail = 0;
 
             Console.WriteLine("Type in 'login' to sign into your account");
 
-            string order = Console.ReadLine();
+            string order = Console.ReadLine(); //allows user to enter function (only option is phrase 'login')
 
-            if (order == "login")
+            if (order == "login") //if statement checking if order == to login
             {
-                for (int i = 0; i < GuessCount; i++)
+                for (int i = 0; i < GuessCount; i++) //for loop length of variable GuessCount
                 {
 
-                    Console.WriteLine("Please type in your username");
-                    string GuessUserName = Console.ReadLine();
+                    Console.WriteLine("Please type in your username"); //Prompts user to enter username
+                    string GuessUserName = Console.ReadLine(); //allows user to enter string variable GuessUserName
 
-                    Console.WriteLine("Please type in your Password");
-                    string GuessPassword = Console.ReadLine();
+                    Console.WriteLine("Please type in your Password"); //Prompts user to enter password
+                    string GuessPassword = Console.ReadLine(); //allows user to enter string variable GuessPassword
 
-                    if ((GuessUserName != Username) || (GuessPassword != Password))
+                    if ((GuessUserName != Username) || (GuessPassword != Password)) //checks if the entered credentials are NOT correct
                     {
-                        Console.WriteLine("There was a mistake with your Username/Password. Try again, you have " + (GuessCount - (i + 1)) + " more tries");
-                        fail = GuessCount - (i + 1);
+                        Console.WriteLine("There was a mistake with your Username/Password. Try again, you have " + (GuessCount - (i + 1)) + " more tries"); //prints remaining tries
+                        fail = GuessCount - (i + 1); //sets variable for a situation where all attempts are used up
                     }
 
-                    if (fail == 0)
+                    if (fail == 0) //checks if all tries are used up
                     {
-                        Console.WriteLine("You will now be locked out of your account");
+                        Console.WriteLine("You will now be locked out of your account"); //prints a locked out message, ends the program
                     }
 
-                    if (Username == GuessUserName && Password == GuessPassword)
+                    if (Username == GuessUserName && Password == GuessPassword) //checks if the entered credentials ARE correct 
                     {
-                        Console.Clear();
-                        PrintLine();
-                        PrintRow("Morbius", "Popeye", "Sonic 2", "The Batman");
-                        PrintLine();
-                        PrintRow("12:45, 3:25, 6:30, 9:15", "3:00 p.m, 5:00 p.m, 7:00 p.m, 9:00 p.m", "1:00 p.m, 3:45 p.m, 6:30 p.m, 9:20 p.m", "4:30 p.m, 6:00 p.m, 8:30 p.m, 9:40 p.m");
-                        PrintRow("$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+");
-                        PrintLine();
-                        PrintRow("Enter 1 to get seats", "Enter 2 to get seats", "Enter 3 to get seats", "Enter 4 to get seats");
+                        Console.Clear(); //clears console window
+                        PrintLine(); //calls function PrintLine
+                        PrintRow("Morbius", "Popeye", "Sonic 2", "The Batman"); //Displays data for movie titles
+                        PrintLine(); //calls function PrintLine
+                        PrintRow("12:45, 3:25, 6:30, 9:15", "3:00 p.m, 5:00 p.m, 7:00 p.m, 9:00 p.m", "1:00 p.m, 3:45 p.m, 6:30 p.m, 9:20 p.m", "4:30 p.m, 6:00 p.m, 8:30 p.m, 9:40 p.m"); //Prints data for movie times
+                        PrintRow("$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+", "$7.99 Child, $10.99 Adult, $49.99 60+"); //Prints data for ticket costs
+                        PrintLine(); //calls function PrintLine
+                        PrintRow("Enter 1 to get seats", "Enter 2 to get seats", "Enter 3 to get seats", "Enter 4 to get seats"); //Prompts user to enter corresponding number to movie in order to book tickets
 
-                        int seat = Convert.ToInt32(Console.ReadLine());
+                        int seat = Convert.ToInt32(Console.ReadLine()); //declares variable seat, which is the variable from 1-4 which selects which movie will be watched
 
-                        if (seat == 1)
+                        if (seat == 1) //if seat == 1, goes into Morbius seat options
                         {
-                            Console.WriteLine("Morbius seats");
+                            Console.WriteLine("Morbius seats"); //prints phrase
                         }
-                        else if (seat == 2)
+                        else if (seat == 2) //if seat == 2, goes into Popeye seat options
                         {
-                            Console.WriteLine("Popeye seats");
+                            Console.WriteLine("Popeye seats"); //prints phrase
                         }
-                        else if (seat == 3)
+                        else if (seat == 3) //if seat == 3, goes into Sonic 2 seat options
                         {
-                            Console.WriteLine("Sonic 2 seats");
+                            Console.WriteLine("Sonic 2 seats"); //prints phrase
                         }
-                        else if (seat == 4)
+                        else if (seat == 4) //if seat == 4, goes into The Batman seat options
                         {
-                            Console.WriteLine("The Batman seats");
+                            Console.WriteLine("The Batman seats"); //prints phrase
                         }
-                        else
+                        else //if none of the above conditions are met, an invalid input must have been entered, therefore printing the message "Invalid Input"
                         {
-                            Console.WriteLine("Invalid input");
+                            Console.WriteLine("Invalid Input"); //prints phrase
                         }
 
-                        Console.WriteLine("Enter column number (1-14)");
-                        int column = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Enter Row (A-F)");
-                        char row = Convert.ToChar(Console.ReadLine());
+                        Console.WriteLine("Enter column number (1-14)"); //prompts user to enter a column number for their seat
+                        int column = Convert.ToInt32(Console.ReadLine()); //allows user to enter the column number
+                        Console.WriteLine("Enter Row (A-F)"); //prompts user to enter a row character for their seat
+                        char row = Convert.ToChar(Console.ReadLine()); //allows user to enter the row character
 
-                        Console.WriteLine("column " + column + " " + "row " + row + " is your seat");
-                        Console.WriteLine("Thank you for buying a ticket at Movie Knight! We hope you enjoy your theatre experience!");
+                        Console.WriteLine("column " + column + " " + "row " + row + " is your seat"); //Prints the seat information
+                        Console.WriteLine("Thank you for buying a ticket at Movie Knight! We hope you enjoy your theatre experience!"); //Final send off message
+                        break; //ends for loop, finishing program
                     }
                 }
-            }
-
-            else
-            {
-                Console.WriteLine("Invalid Input");
             }
 
             Console.ReadLine();
@@ -146,35 +131,35 @@ namespace arrayAssignment
 
         //==========================================================================================================================================
 
-        static void PrintLine()
+        static void PrintLine() //creates new class PrintLine
         {
-            Console.WriteLine(new string('-', tableWidth));
+            Console.WriteLine(new string('-', tableWidth)); //displays a new string variable which is the length of the table (variable declared at the top of the program)
         }
 
-        static void PrintRow(params string[] columns)
+        static void PrintRow(params string[] columns) //creates new class PrintRow
         {
-            int width = (tableWidth - columns.Length) / columns.Length;
-            string row = "|";
+            int width = (tableWidth - columns.Length) / columns.Length; //new integer width, which is the table width subtracted by the amount of columns required
+            string row = "|"; //character printed for the column
 
-            foreach (string column in columns)
+            foreach (string column in columns) //foreach loop
             {
-                row += AlignCentre(column, width) + "|";
+                row += AlignCentre(column, width) + "|"; //declares how the column should look like using a new variable called row
             }
 
-            Console.WriteLine(row);
+            Console.WriteLine(row); //displays variable "row"
         }
 
-        static string AlignCentre(string text, int width)
+        static string AlignCentre(string text, int width) //new class which configures the content of the table
         {
-            text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
+            text = text.Length > width ? text.Substring(0, width - 3) + "..." : text; //if the text goes off of the table as the width of the console window is too small, the characters "..." will appear
 
-            if (string.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(text)) //if statement which makes it so if a slot on the table is empty, an empty space will be printed
             {
-                return new string(' ', width);
+                return new string(' ', width); //prints space
             }
-            else
+            else //if the previous condition is not met...
             {
-                return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
+                return text.PadRight(width - (width - text.Length) / 2).PadLeft(width); //creates padding on the text in any box on the table which allows the text to be centered
             }
 
         }
