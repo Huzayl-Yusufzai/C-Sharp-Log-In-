@@ -11,6 +11,8 @@ namespace arrayAssignment
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello! It seems that you are new to the 'Movie Knight' Website! Please follow the steps to create your account!");
+            set:
             Console.WriteLine("Enter Username"); //prompts user to enter username
             string Username = Console.ReadLine(); //allows user to enter username
             char[] UsernameArray = Username.ToCharArray(); //create array of 16 elements
@@ -54,7 +56,7 @@ namespace arrayAssignment
             int GuessCount = 4; //declares variable GuessCount
             int fail = 0;
 
-            Console.WriteLine("Type in 'login' to sign into your account");
+            Console.WriteLine("Type in 'login' to sign into your account, or 'set' to set new login credentials");
 
             string order = Console.ReadLine(); //allows user to enter function (only option is phrase 'login')
 
@@ -124,6 +126,10 @@ namespace arrayAssignment
                         break; //ends for loop, finishing program
                     }
                 }
+            }
+            if (order == "set")
+            {
+                goto set;
             }
 
             Console.ReadLine();
