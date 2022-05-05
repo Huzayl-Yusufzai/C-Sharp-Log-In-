@@ -127,9 +127,10 @@ namespace arrayAssignment
                     }
                 }
             }
-            if (order == "set")
+            if (order == "set") //checks if user input is 'set' 
             {
-                goto set;
+                Console.Clear(); //clears console window
+                goto set; //starts at the beginning
             }
 
             Console.ReadLine();
